@@ -1,11 +1,14 @@
 import './index.css'
 
+import LivecycleSDK from '@livecycle/sdk'
 import React from 'react'
 import ReactDOM from 'react-dom'
 
 import App from './App'
 import { AlertProvider } from './context/AlertContext'
 import reportWebVitals from './reportWebVitals'
+
+LivecycleSDK.init()
 
 ReactDOM.render(
   <React.StrictMode>

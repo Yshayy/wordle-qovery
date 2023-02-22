@@ -226,4 +226,4 @@ For mobile and wearable devices and smart TVs, sharing of results is initially a
 - [Zip-zap-bam!](https://aneets.github.io/zip-zap-bam/): Word ladder game.
 - [0xdle](https://0xdle.vercel.app/): Hexadecimal
 
-_Want to add one to the list? Please make a pull request._
+## _Want to add one to the list? Please make a pull request._
