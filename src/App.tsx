@@ -188,16 +188,6 @@ function App() {
     }
   }, [isGameWon, isGameLost, showSuccessAlert])
 
-  const onChar = (value: string) => {
-    if (
-      unicodeLength(`${currentGuess}${value}`) <= solution.length &&
-      guesses.length < MAX_CHALLENGES &&
-      !isGameWon
-    ) {
-      setCurrentGuess(`${currentGuess}${value}`)
-    }
-  }
-
   const onDelete = () => {
     setCurrentGuess(
       new GraphemeSplitter().splitGraphemes(currentGuess).slice(0, -1).join('')
@@ -267,6 +257,20 @@ function App() {
           persist: true,
           delayMs: REVEAL_TIME_MS * solution.length + 1,
         })
+      }
+    }
+  }
+  
+  const onChar = (value: string) => {
+    const newGuess = `${currentGuess}${value}`
+    if (
+      unicodeLength(newGuess) <= solution.length &&
+      guesses.length < MAX_CHALLENGES &&
+      !isGameWon
+    ) {
+      setCurrentGuess(`${currentGuess}${value}`)
+      if (unicodeLength(newGuess) === solution.length){
+        onEnter();
       }
     }
   }
